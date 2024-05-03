@@ -3,7 +3,7 @@
 count=1
 max=10
 
-while [ $count -lt $max ]
+while [ $count -le $max ]
 do
        if [ $count -eq 4 ]
        then
