@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+
+for item in *
+do
+	if [[ ! "$item" == .* && ( -f "$item" || -d "$item" ) ]]
+	then
+		file=$(echo "$item" | cut -d'-' -f2-)
+		echo "$file"
+	fi
+done
+
