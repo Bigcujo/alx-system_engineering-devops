@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# This script is displaying "Best Scool" 10 times
+# This script will print out the current running process.
 echo "USER     PID %CPU %MEM  VSZ  RSS TTY     STAT   START    TIME COMMAND"
 ps axo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --forest | sed 1d
