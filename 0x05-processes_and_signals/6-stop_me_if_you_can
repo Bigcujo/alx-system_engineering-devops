@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script will stop the 4-to_ifinity process without using kill or killall
+pkill -f infinity
