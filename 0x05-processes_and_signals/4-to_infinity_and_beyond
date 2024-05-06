@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# this will print To infinity and betond indefinitely
+while [[ true ]]
+do 
+echo "To infinity and beyond"
+sleep 2
+done
