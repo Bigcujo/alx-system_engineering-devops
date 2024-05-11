@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+echo "Active Internet connections (only servers)"
+echo "Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name"
+
+netstat -tuln | awk '$6 == "LISTEN" {print $1 "\t" $2 "\t" $4 "\t" $5 "\t" $6 "\t" $NF}' | while read -r line; do
+    proto=$(echo "$line" | awk '{print $1}')
+    recv_q=$(echo "$line" | awk '{print $2}')
+    send_q=$(echo "$line" | awk '{print $3}')
+    local_addr=$(echo "$line" | awk '{print $4}')
+    foreign_addr=$(echo "$line" | awk '{print $5}')
+    state=$(echo "$line" | awk '{print $6}')
+    program=$(echo "$line" | awk '{print $7}')
+    echo "$proto\t$recv_q\t$send_q\t$local_addr\t$foreign_addr\t$state\t$program"
+done
