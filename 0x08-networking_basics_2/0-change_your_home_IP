@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# this script configures an ubuntu server to these requirments
+# local host will resolve to 127.0.0.2
+# facbook.com will resolve to 8.8.8.8
+cp /etc/hosts ~/hosts.new
+sed -i s/127.0.0.1/127.0.0.2/ ~/hosts.new
+echo "8.8.8.8 facebook.com" >> ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
